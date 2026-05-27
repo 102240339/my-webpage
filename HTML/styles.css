@@ -1,0 +1,137 @@
+/* Basic responsive styling for Anna's page */
+:root {
+  --bg: #f4f7ff;
+  --text: #1c1f33;
+  --card: #ffffff;
+  --primary: #4f6df5;
+  --accent: #f5a623;
+  --shadow: 0 12px 28px rgba(15, 23, 63, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #eef4ff 0%, #fefefe 100%);
+  color: var(--text);
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header,
+section {
+  background: var(--card);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.6s ease, box-shadow 0.6s ease;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.75rem;
+}
+
+p {
+  line-height: 1.7;
+}
+
+.intro {
+  color: #4f5a8e;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+figure {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.95rem 1.75rem;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 12px 20px rgba(79, 109, 245, 0.18);
+  transition: all 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(79, 109, 245, 0.25);
+}
+
+button:active {
+  transform: translateY(0) scale(0.97);
+}
+
+button.clicked {
+  animation: buttonPulse 0.6s ease-out;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --card: #111827;
+  --primary: #7c3aed;
+  --accent: #f59e0b;
+  background: #020617;
+}
+
+body.dark a {
+  color: #93c5fd;
+}
+
+body.dark button {
+  background: #8b5cf6;
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(0.97);
+    box-shadow: 0 0 0 0 rgba(79, 109, 245, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(79, 109, 245, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 12px 20px rgba(79, 109, 245, 0.18);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
